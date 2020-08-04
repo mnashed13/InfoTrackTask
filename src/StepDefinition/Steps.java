@@ -85,13 +85,13 @@ WebDriver driver;
 		Thread.sleep(2000);
 	 	System.out.println("Entering Account Creation Credentials");
 	 	Thread.sleep(2000);
-	 	driver.findElement(By.id("firstName")).sendKeys("TestFirstName");
+	 	driver.findElement(By.id("firstName")).sendKeys("TestFirstName2");
 	 	Thread.sleep(2000);
 		driver.findElement(By.id("lastName")).sendKeys("TestLastName");
 		Thread.sleep(2000);
 		driver.findElement(By.cssSelector(".uBOgn")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.id("username")).sendKeys("testemail-27e950@inbox.mailtrap.io");
+		driver.findElement(By.id("username")).sendKeys("testemail3-27e950@inbox.mailtrap.io");
 		Thread.sleep(2000);
 		driver.findElement(By.cssSelector("#passwd .whsOnd")).sendKeys("!!Password123");
 		Thread.sleep(2000);
@@ -106,6 +106,7 @@ WebDriver driver;
 		if(Text1.contentEquals(Text2)) {
 			
 			System.out.println("Account Creation Test has passed");
+			Thread.sleep(2000);
 			driver.close();
 		}else {
 			System.out.println("Account Creation Test has Failed");

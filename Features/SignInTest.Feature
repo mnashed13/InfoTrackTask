@@ -1,7 +1,7 @@
-Feature: Reset functionality on login page of Application 
+Feature: F Google Sign In Functionality Test 
 
 
-Scenario: Verification of Reset button 
+Scenario: Sign In Test 
 
 
 Given that I Open google chrome and launch the application to run tests	
@@ -17,12 +17,12 @@ Then Reset the test for Forgot Password link Test
 
 
 
-
+  
 # Please note below are the login credentails to login.
 # Username: tt5235783
 # Password: !!Password123
 
 #
-#TestEmail for accounnt Creation: testemail-27e950@inbox.mailtrap.io
+#TestEmail for account Creation: testemail-27e950@inbox.mailtrap.io
 #
 #
