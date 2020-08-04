@@ -1,4 +1,4 @@
-Feature: F Google Sign In Functionality Test 
+Feature: Google Sign In Functionality Test 
 
 
 Scenario: Sign In Test 
@@ -23,6 +23,6 @@ Then Reset the test for Forgot Password link Test
 # Password: !!Password123
 
 #
-#TestEmail for account Creation: testemail-27e950@inbox.mailtrap.io
+#TestEmail for account Creation: testemail7-27e950@inbox.mailtrap.io
 #
 #

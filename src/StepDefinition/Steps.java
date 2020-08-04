@@ -21,8 +21,8 @@ WebDriver driver;
     {		
         System.out.println("This is a test to see if the glue code is correct.");
     	System.setProperty("webdriver.chrome.driver","chromedriver.exe");
+    	driver = new ChromeDriver();
 //    	System.setProperty("webdriver.gecko.driver","geckodriver.exe");
-		driver = new ChromeDriver();
 //		driver = new FirefoxDriver();
 		System.out.println("Starting webdriver and acessing Website"); 
 		String Url = "https://accounts.google.com/ServiceLogin";
@@ -73,8 +73,9 @@ WebDriver driver;
     @Then("^Reset the test for Create New Account Test$")					
     public void Create_New_Account_Test() throws Throwable 							
     {    		
-        System.out.println("Resetting browser test for Forgot Password test");		
+        System.out.println("Resetting browser test for Create New Account test");		
         driver = new ChromeDriver();
+//		driver = new FirefoxDriver();
     	System.out.println("Starting webdriver and acessing Website to start the learn more link test"); 
 		String Url = "https://accounts.google.com/ServiceLogin";
 		driver.get(Url);
@@ -91,7 +92,7 @@ WebDriver driver;
 		Thread.sleep(2000);
 		driver.findElement(By.cssSelector(".uBOgn")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.id("username")).sendKeys("testemail3-27e950@inbox.mailtrap.io");
+		driver.findElement(By.id("username")).sendKeys("testemail7-27e950@inbox.mailtrap.io");
 		Thread.sleep(2000);
 		driver.findElement(By.cssSelector("#passwd .whsOnd")).sendKeys("!!Password123");
 		Thread.sleep(2000);
@@ -99,19 +100,35 @@ WebDriver driver;
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[@id='accountDetailsNext']/span/span")).click();
 		Thread.sleep(2000);
+		
 		String Text1 = "Verify your email address";
+		String Text2 = driver.findElement(By.xpath("//h1[@id='headingText']")).getText();
 		
-		String Text2 = driver.findElement(By.xpath("//h1[@id='headingText']/span")).getText();
 		
+
 		if(Text1.contentEquals(Text2)) {
-			
-			System.out.println("Account Creation Test has passed");
 			Thread.sleep(2000);
-			driver.close();
+			System.out.println("Account Creation Test has passed");
+			driver.quit();
 		}else {
+			Thread.sleep(2000);
 			System.out.println("Account Creation Test has Failed");
+			driver.quit();
 			
 		}
+		
+		
+// 		Another way of verifying text on a webpage is to use the getPagesource() and to see if the page contains the required text.	
+		
+//		if(driver.getPageSource().contains("If you don’t see it, check your spam folder")){
+//			System.out.println("Account Creation Test has passed");
+//			driver.quit();
+//		}else {
+//			System.out.println("Account Creation Test has Failed");
+//			driver.quit();
+//			
+//		}
+		
 		
     }		
 
@@ -121,6 +138,7 @@ WebDriver driver;
   {    		
       System.out.println("Resetting browser test for Forgot Password test");		
       driver = new ChromeDriver();
+//		driver = new FirefoxDriver();
   	System.out.println("Starting webdriver and acessing Website to start the learn more link test"); 
 		String Url = "https://accounts.google.com/ServiceLogin";
 		driver.get(Url);
