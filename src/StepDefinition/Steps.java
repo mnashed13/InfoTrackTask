@@ -92,7 +92,7 @@ WebDriver driver;
 		Thread.sleep(2000);
 		driver.findElement(By.cssSelector(".uBOgn")).click();
 		Thread.sleep(2000);
-		driver.findElement(By.id("username")).sendKeys("testemail7-27e950@inbox.mailtrap.io");
+		driver.findElement(By.id("username")).sendKeys("mnashed1324332@outlook.com");
 		Thread.sleep(2000);
 		driver.findElement(By.cssSelector("#passwd .whsOnd")).sendKeys("!!Password123");
 		Thread.sleep(2000);
@@ -102,9 +102,8 @@ WebDriver driver;
 		Thread.sleep(2000);
 		
 		String Text1 = "Verify your email address";
-		String Text2 = driver.findElement(By.xpath("//h1[@id='headingText']")).getText();
-		
-		
+		String Text2 = driver.findElement(By.cssSelector("#headingText > span")).getText();
+		System.out.println(Text2);
 
 		if(Text1.contentEquals(Text2)) {
 			Thread.sleep(2000);
